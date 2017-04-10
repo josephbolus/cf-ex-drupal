@@ -14,7 +14,7 @@ _log = logging.getLogger('drupal')
 DEFAULTS = utils.FormattedDict({
     'DRUPAL_VERSION': '8.3.0',
     'DRUPAL_PACKAGE': 'drupal-{DRUPAL_VERSION}.tar.gz',
-    'DRUPAL_HASH': '4230279ecca4f0cde652a219e10327e7',
+    'DRUPAL_HASH': '1dcce599eddba07eb00e8879937525c3',
     'DRUPAL_URL': 'http://ftp.drupal.org/files/projects/{DRUPAL_PACKAGE}'
 })
 
