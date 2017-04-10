@@ -50,6 +50,20 @@ When you push the application here's what happens.
 
 1. I include a [copy of the default settings from the standard Drupal install](https://github.com/cloudfoundry-samples/cf-ex-drupal/blob/master/htdocs/sites/default/settings.php).  This is [modified](https://github.com/cloudfoundry-samples/cf-ex-drupal/blob/master/htdocs/sites/default/settings.php#L216-L251) to pull the database configuration from the `VCAP_SERVICES` environment variable, which is populated with information from services that are bound to the app.  Since we bind a MySQL service to our app in the instructions above, we search for that and automatically configure it for use with Drupal.
 
+### Note
+
+If you install this project to a cloud.gov site (which uses Cloud Foundry), it will fail on running install.php. The reason for that is that cloud.gov has different array keys. Specifically:
+
+Database
+```php
+$mysql_services[0]['credentials']['db_name']
+```
+Host
+``` php
+$mysql_services[0]['credentials']['host']
+```
+Editing htdocs/sites/default/settings.php does the trick.
+
 ### Caution
 
 Please read the following before using Drupal in production on CloudFoundry.
